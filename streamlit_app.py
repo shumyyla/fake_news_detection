@@ -7,6 +7,7 @@ import re
 import string
 import nltk
 nltk.download('punkt')
+nltk.download('stopwords')
 
 model = joblib.load('model_fnd.pkl')
 st.title("Fake News Detection App")
