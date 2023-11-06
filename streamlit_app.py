@@ -12,7 +12,7 @@ nltk.download('stopwords')
 model = joblib.load('model_fnd.pkl')
 st.title("Fake News Detection App")
 
-user_input = st.text_area("Enter a news for detection:")
+user_input = st.text_area("Enter a news:")
 
 predict_button = st.button("Predict")
 
@@ -40,5 +40,5 @@ if user_input and predict_button:
     # Make a prediction
     prediction = model.predict([cleaned_text])[0]
     label = 'Fake' if prediction == 1 else 'True'
-    st.write(f"The news is classified as :")
+    st.write(f"The news is:")
     st.subheader(f"{label}")
