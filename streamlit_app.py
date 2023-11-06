@@ -10,7 +10,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 
 model = joblib.load('model_fnd.pkl')
-st.title("Fake News Detection App")
+st.title("Pakistani Fake News Detection App")
 
 user_input = st.text_area("Enter a news for detection:")
 
