@@ -5,6 +5,8 @@ from nltk.corpus import stopwords
 from bs4 import BeautifulSoup
 import re
 import string
+import nltk
+nltk.download('punkt')
 
 model = joblib.load('model_fnd.pkl')
 st.title("Fake News Detection App")
