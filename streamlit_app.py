@@ -39,6 +39,6 @@ if user_input and predict_button:
     prediction = model.named_steps['classifier'].predict(user_input_vectorized)
     # Make a prediction
     prediction = model.predict([cleaned_text])[0]
-    label = 'Fake' if prediction == 1 else 'True'
+    label = 'Fake' if prediction == 1 else 'Real'
     st.write(f"The news is:")
     st.subheader(f"{label}")
