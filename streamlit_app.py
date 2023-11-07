@@ -10,11 +10,29 @@ nltk.download('punkt')
 nltk.download('stopwords')
 
 model = joblib.load('model_fnd.pkl')
-st.title("Pakistani Fake News Detection App")
+st.title("Fake News Detection App")
 
 user_input = st.text_area("Enter a news:")
 
-predict_button = st.button("Predict")
+# Embed custom HTML and CSS for a green button
+st.markdown("""
+    <style>
+    .green-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .green-btn:hover {
+        background-color: #45a049;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+# Use the custom green button style
+predict_button = st.button("Predict", class_="green-btn")
 
 def tokenize_and_clean_text(text):
     # Remove digits and words containing digits
